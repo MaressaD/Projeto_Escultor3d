@@ -7,7 +7,7 @@ class Plotter : public QWidget
 {
     Q_OBJECT
 private:
-    int x,y;
+    int x,y,z;
 public:
     explicit Plotter(QWidget *parent = nullptr);
     void paintEvent(QPaintEvent *event);
