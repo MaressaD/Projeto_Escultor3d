@@ -27,7 +27,7 @@
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -103,7 +103,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>530</x>
@@ -242,7 +242,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>532</x>
@@ -269,12 +269,12 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QSlider" name="horizontalSlider">
+        <widget class="QSlider" name="horizontalSliderX">
          <property name="cursor">
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="maximum">
-          <number>100</number>
+          <number>20</number>
          </property>
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -289,12 +289,12 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QSlider" name="horizontalSlider_2">
+        <widget class="QSlider" name="horizontalSliderY">
          <property name="cursor">
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="maximum">
-          <number>100</number>
+          <number>20</number>
          </property>
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -347,7 +347,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -519,7 +519,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>530</x>
@@ -596,39 +596,44 @@
    <extends>QWidget</extends>
    <header>plotter.h</header>
    <container>1</container>
+   <slots>
+    <slot>setX(int)</slot>
+    <slot>setY(int)</slot>
+    <slot>buildGrid()</slot>
+   </slots>
   </customwidget>
  </customwidgets>
  <resources/>
  <connections>
   <connection>
-   <sender>horizontalSlider</sender>
+   <sender>horizontalSliderX</sender>
    <signal>valueChanged(int)</signal>
    <receiver>lcdNumber_3</receiver>
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>575</x>
-     <y>49</y>
+     <x>647</x>
+     <y>79</y>
     </hint>
     <hint type="destinationlabel">
-     <x>532</x>
-     <y>44</y>
+     <x>534</x>
+     <y>83</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>horizontalSlider_2</sender>
+   <sender>horizontalSliderY</sender>
    <signal>valueChanged(int)</signal>
    <receiver>lcdNumber_2</receiver>
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>590</x>
-     <y>74</y>
+     <x>662</x>
+     <y>108</y>
     </hint>
     <hint type="destinationlabel">
-     <x>521</x>
-     <y>75</y>
+     <x>534</x>
+     <y>112</y>
     </hint>
    </hints>
   </connection>
@@ -639,12 +644,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>597</x>
-     <y>103</y>
+     <x>669</x>
+     <y>137</y>
     </hint>
     <hint type="destinationlabel">
-     <x>528</x>
-     <y>104</y>
+     <x>534</x>
+     <y>141</y>
     </hint>
    </hints>
   </connection>
@@ -655,12 +660,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>566</x>
-     <y>293</y>
+     <x>638</x>
+     <y>238</y>
     </hint>
     <hint type="destinationlabel">
-     <x>509</x>
-     <y>289</y>
+     <x>532</x>
+     <y>242</y>
     </hint>
    </hints>
   </connection>
@@ -671,12 +676,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>560</x>
-     <y>323</y>
+     <x>632</x>
+     <y>267</y>
     </hint>
     <hint type="destinationlabel">
-     <x>514</x>
-     <y>323</y>
+     <x>532</x>
+     <y>271</y>
     </hint>
    </hints>
   </connection>
@@ -687,12 +692,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>586</x>
-     <y>348</y>
+     <x>658</x>
+     <y>296</y>
     </hint>
     <hint type="destinationlabel">
-     <x>504</x>
-     <y>354</y>
+     <x>532</x>
+     <y>300</y>
     </hint>
    </hints>
   </connection>
@@ -703,12 +708,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>568</x>
-     <y>379</y>
+     <x>640</x>
+     <y>325</y>
     </hint>
     <hint type="destinationlabel">
-     <x>513</x>
-     <y>383</y>
+     <x>532</x>
+     <y>329</y>
     </hint>
    </hints>
   </connection>
@@ -719,12 +724,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>348</x>
-     <y>395</y>
+     <x>478</x>
+     <y>413</y>
     </hint>
     <hint type="destinationlabel">
-     <x>308</x>
-     <y>394</y>
+     <x>313</x>
+     <y>417</y>
     </hint>
    </hints>
   </connection>
@@ -735,12 +740,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>335</x>
-     <y>420</y>
+     <x>478</x>
+     <y>442</y>
     </hint>
     <hint type="destinationlabel">
-     <x>303</x>
-     <y>422</y>
+     <x>313</x>
+     <y>446</y>
     </hint>
    </hints>
   </connection>
@@ -751,8 +756,8 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>357</x>
-     <y>448</y>
+     <x>478</x>
+     <y>471</y>
     </hint>
     <hint type="destinationlabel">
      <x>280</x>
@@ -767,8 +772,8 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>149</x>
-     <y>392</y>
+     <x>221</x>
+     <y>413</y>
     </hint>
     <hint type="destinationlabel">
      <x>69</x>
@@ -783,8 +788,8 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>113</x>
-     <y>426</y>
+     <x>185</x>
+     <y>442</y>
     </hint>
     <hint type="destinationlabel">
      <x>61</x>
@@ -815,14 +820,65 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>577</x>
-     <y>446</y>
+     <x>649</x>
+     <y>473</y>
     </hint>
     <hint type="destinationlabel">
-     <x>520</x>
-     <y>451</y>
+     <x>532</x>
+     <y>477</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderX</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>widget</receiver>
+   <slot>setX(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>623</x>
+     <y>75</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>297</x>
+     <y>118</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderY</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>widget</receiver>
+   <slot>setY(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>628</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>301</x>
+     <y>148</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>widget</receiver>
+   <slot>buildGrid()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>611</x>
+     <y>157</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>289</x>
+     <y>197</y>
     </hint>
    </hints>
   </connection>
  </connections>
+ <slots>
+  <slot>buildGrid()</slot>
+ </slots>
 </ui>

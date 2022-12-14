@@ -6,7 +6,8 @@
 Plotter::Plotter(QWidget *parent)
     : QWidget{parent}
 {
-
+    x=10;
+    y=10;
 }
 
 void Plotter::paintEvent(QPaintEvent *event)
@@ -14,8 +15,7 @@ void Plotter::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     QBrush brush;
     QPen pen;
-    int a;
-    int b=20;
+    int i,j;
     //brush
     brush.setColor(QColor(255,255,255));
     brush.setStyle(Qt::SolidPattern);
@@ -32,11 +32,28 @@ void Plotter::paintEvent(QPaintEvent *event)
     pen.setColor(QColor(0,0,0));
     painter.setPen(pen);
 
-    for(a=1;a<=b;a++){
-    painter.drawLine(0,a*height()/b,width(),a*height()/b);
+    for(i=1;i<=x;i++){
+    painter.drawLine(0,i*height()/x,width(),i*height()/x);
     }
 
-    for(a=1;a<=b;a++){
-    painter.drawLine(a*width()/b,0,a*width()/b,height());
+    for(j=1;j<=y;j++){
+    painter.drawLine(j*width()/y,0,j*width()/y,height());
     }
+}
+
+void Plotter::setX(int _x)
+{
+    x=_x;
+    //repaint();
+}
+
+void Plotter::setY(int _y)
+{
+    y=_y;
+    //repaint();
+}
+
+void Plotter::buildGrid()
+{
+    repaint();
 }
