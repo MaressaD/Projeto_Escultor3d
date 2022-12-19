@@ -14,6 +14,15 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+public slots:
+    //void selectMethod(bool);
+signals:
+    void getMethod(QString);
+private slots:
+   // void on_pbuttonmethod_clicked();
+
+    void on_buttonPVoxel_clicked(bool checked);
+
 private:
     Ui::MainWindow *ui;
 };
