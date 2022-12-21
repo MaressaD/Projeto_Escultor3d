@@ -1,0 +1,13 @@
+release/color.o
+release/main.o
+release/mainwindow.o
+release/plotter.o
+release/sculptor.o
+release/color.o
+release/main.o
+release/mainwindow.o
+release/plotter.o
+release/sculptor.o
+release/moc_color.o
+release/moc_mainwindow.o
+release/moc_plotter.o

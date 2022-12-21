@@ -1,0 +1,13 @@
+debug/color.o
+debug/main.o
+debug/mainwindow.o
+debug/plotter.o
+debug/sculptor.o
+debug/color.o
+debug/main.o
+debug/mainwindow.o
+debug/plotter.o
+debug/sculptor.o
+debug/moc_color.o
+debug/moc_mainwindow.o
+debug/moc_plotter.o
