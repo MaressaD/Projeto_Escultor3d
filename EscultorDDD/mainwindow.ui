@@ -91,7 +91,7 @@
              <string>Add Ellipsoid</string>
             </property>
             <property name="icon">
-             <iconset resource="resources.qrc">
+             <iconset>
               <normaloff>:/icons/elipsinha</normaloff>:/icons/elipsinha</iconset>
             </property>
            </widget>
@@ -143,7 +143,7 @@
             </property>
             <property name="icon">
              <iconset resource="resources.qrc">
-              <normaloff>:/icons/ellipsoid.png</normaloff>:/icons/ellipsoid.png</iconset>
+              <normaloff>:/icons/elipsinhacut.png</normaloff>:/icons/elipsinhacut.png</iconset>
             </property>
            </widget>
           </item>

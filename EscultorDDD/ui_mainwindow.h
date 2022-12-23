@@ -215,7 +215,7 @@ public:
         buttonCEllipsoid = new QRadioButton(centralwidget);
         buttonCEllipsoid->setObjectName(QString::fromUtf8("buttonCEllipsoid"));
         QIcon icon8;
-        icon8.addFile(QString::fromUtf8(":/icons/ellipsoid.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon8.addFile(QString::fromUtf8(":/icons/elipsinhacut.png"), QSize(), QIcon::Normal, QIcon::Off);
         buttonCEllipsoid->setIcon(icon8);
 
         horizontalLayout_2->addWidget(buttonCEllipsoid);
