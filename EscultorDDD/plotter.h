@@ -22,14 +22,14 @@ private:
    // int red,green,blue,alpha;
 
     //posição indexada do mouse no momento do click
-    int xIndex,yIndex,zIndex;
+    int lIndex,cIndex,pIndex;
     //grade dimensions
-    int x,y,z;
+    int nc,nl,np;
     /**x: number of lines,
      * y:number of columns,
      * z: number of planes**/
     //spacing betwen columns, lines and planes.
-    double dx, dy;
+    double dl, dc;
     //radius sphere dimensions
     int r;
     //radius ellipsoid dimensions
@@ -52,9 +52,9 @@ signals:
     void changeSlidersPlanz(int,int);
 
 public slots:
-    void setX(int _x);
-    void setY(int _y);
-    void setZ(int _z);
+    void setX(int _nc);
+    void setY(int _nl);
+    void setZ(int _np);
     void buildGrid();
     void setR(int _r);
     void setRx(int _rx);

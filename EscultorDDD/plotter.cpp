@@ -21,13 +21,14 @@ using namespace std;
 Plotter::Plotter(QWidget *parent)
     : QWidget{parent}
 {
-    x=y=z=0;
+    nc=nl=np=0;
     r=0;
     rx=ry=rz=0;
+    dl=dc=0;
     dimx=dimy=dimz=0;
-    xIndex=yIndex=zIndex=0;
+    lIndex=cIndex=pIndex=0;
     palette=QColor(255,255,255,255);
-    s = new Sculptor(x,y,z);
+    s = new Sculptor(nl,nc,np);
     method=" ";
 
 }
@@ -56,35 +57,36 @@ void Plotter::paintEvent(QPaintEvent *event)
     //grade
     pen.setColor(QColor(0,0,0));
 
-    if(x!=0 && y!=0 && z!=0){
+    if(nl!=0 && nc!=0 && np!=0){
 
         pen.setWidth(2);
         painter.setPen(pen);
 
-        dx=(double)height()/x;
-        dy=(double)width()/y;
+        dc=(double)width()/nc; //distancia entre colunas
+        dl=(double)height()/nl; //distancia entre linhas
 
-        for(i=1;i<=x;i++){
-        painter.drawLine(0,i*height()/x,width(),i*height()/x);
+        for(i=1;i<=nl;i++){
+        painter.drawLine(0,i*height()/nl,width(),i*height()/nl);
+        }
+        for(j=1;j<=nc;j++){
+        painter.drawLine(j*width()/nc,0,j*width()/nc,height());
         }
 
-        for(j=1;j<=y;j++){
-        painter.drawLine(j*width()/y,0,j*width()/y,height());
-        }
+
      }
 
         brush.setColor(QColor(0,0,0));
         painter.setBrush(brush);
 
-        if(x!=0 && y!=0 && z!=0){
-            for(i=0;i<x;i++){
-                for(j=0;j<y;j++){
-                int posicionX = i*dx;
-                int posicionY = j*dy;
+        if(nl!=0 && nc!=0 && np!=0){
+            for(i=1;i<nl;i++){
+                for(j=1;j<nc;j++){
+                int posicionL = i*dl;
+                int posicionC = j*dc;
                 if(sculptor2d[i][j].isOn==true){
                     brush.setColor(QColor(sculptor2d[i][j].r,sculptor2d[i][j].g,sculptor2d[i][j].b,sculptor2d[i][j].a));
                     painter.setBrush(brush);
-                    painter.drawRect(posicionY,posicionX,dy,dx);
+                    painter.drawRect(posicionC,posicionL,dc,dl);
                     }
                 }
             }
@@ -95,43 +97,37 @@ void Plotter::paintEvent(QPaintEvent *event)
 
 
 void Plotter::mousePressEvent(QMouseEvent *event){
-    if(x!=0 && y!=0 && z!=0){
+    if(nl!=0 && nc!=0 && np!=0){
         if(event->button() == Qt::LeftButton){
-            int xMousePosicion = event->x();
-            int yMousePosicion = event->y();
+            int cMousePosicion = event->x();
+            int lMousePosicion = event->y();
 
-            xIndex = yMousePosicion/dx;
-            yIndex = xMousePosicion/dy;
-            //definindo as cores do escultor indo de 0 a 1;
-            //int colorred = palette.red()/255.0f;
-            //int colorgreen = palette.green()/255.0f;
-            //int colorblue = palette.blue()/255.0f;
-            //int coloralpha = palette.alpha()/255.0f;
+            cIndex = cMousePosicion/dc;
+            lIndex = lMousePosicion/dl;
 
-            //s->setColor(colorred,colorgreen,colorblue,coloralpha);
             s->setColor(palette.red()/255.0f,palette.green()/255.0f,palette.blue()/255.0f,palette.alpha()/255.0f);
 
             if(method.compare("PutVoxel",Qt::CaseInsensitive)==0){
-                if(gridLimit(xIndex,yIndex,zIndex)){
-                    putVoxelGrid(sculptor3d[zIndex][xIndex][yIndex],palette);
-                    s->putVoxel(xIndex,yIndex,zIndex);
+                if(gridLimit(lIndex,cIndex,pIndex)){
+                    putVoxelGrid(sculptor3d[pIndex][lIndex][cIndex],palette);
+                    s->putVoxel(lIndex,cIndex,pIndex);
                     qDebug() <<"voxel criado em escultor";
                 }
             }
            if(method.compare("CutVoxel",Qt::CaseInsensitive)==0){
-                if(gridLimit(xIndex,yIndex,zIndex)){
-                cutVoxelGrid(sculptor3d[zIndex][xIndex][yIndex]);
-                s->cutVoxel(xIndex,yIndex,zIndex);
+                if(gridLimit(lIndex,cIndex,pIndex)){
+                cutVoxelGrid(sculptor3d[pIndex][lIndex][cIndex]);
+                s->cutVoxel(lIndex,cIndex,pIndex);
                }
             }
            if(method.compare("PutBox",Qt::CaseInsensitive)==0){
                 for(int k=0;k<dimz;k++){
                        for(int i=0;i<dimx;i++){
                            for(int j=0;j<dimy;j++){
-                                if(gridLimit(xIndex+i,yIndex+j,zIndex+k)){
-                                putVoxelGrid(sculptor3d[zIndex+k][xIndex+i][yIndex+j],palette);
-                                s->putVoxel(xIndex+i,yIndex+j,zIndex+k);
-                                }
+                               if(gridLimit(lIndex+i,cIndex+j,pIndex+k)){
+                                   putVoxelGrid(sculptor3d[pIndex+k][lIndex+i][cIndex+j],palette);
+                                   s->putVoxel(lIndex+i,cIndex+j,pIndex+k);
+                               }
                            }
                         }
 
@@ -141,79 +137,98 @@ void Plotter::mousePressEvent(QMouseEvent *event){
               for(int k=0;k<dimz;k++){
                   for(int i=0;i<dimx;i++){
                       for(int j=0;j<dimy;j++){
-                           if(gridLimit(xIndex+i,yIndex+j,zIndex+k)){
-                           cutVoxelGrid(sculptor3d[zIndex+k][xIndex+x][yIndex+y]);
-                           s->cutVoxel(xIndex+i,yIndex+j,zIndex+k);
-                           }
+                           if(gridLimit(lIndex+i,cIndex+j,pIndex+k)){
+                           cutVoxelGrid(sculptor3d[pIndex+k][lIndex+i][cIndex+j]);
+                           s->cutVoxel(lIndex+i,cIndex+j,pIndex+k);
+                          }
                       }
                    }
               }
           }
           if(method.compare("PutSphere",Qt::CaseInsensitive)==0){
-              for(int k=0;k<dimz;k++){
-                  for(int i=0;i<dimx;i++){
-                      for(int j=0;j<dimy;j++){
-                           if(gridLimit(xIndex+i,yIndex+j,zIndex+k)){
-                           putVoxelGrid(sculptor3d[zIndex+k][xIndex+x][yIndex+y],palette);
-                           s->putVoxel(xIndex+i,yIndex+j,zIndex+k);
-                           }
+              double aux;
+              if(pIndex>=r && lIndex>=r && cIndex>=r){
+              for(int k=pIndex-r;k<=pIndex+r;k++){
+                  for(int i=lIndex-r;i<=lIndex+r;i++){
+                          for(int j=cIndex-r;j<=cIndex+r;j++){
+                              aux=(i-lIndex)*(i-lIndex) + (j-cIndex)*(j-cIndex) + (k-pIndex)*(k-pIndex);
+                              if(aux<=(r*r)){
+                                  if(gridLimit(i,j,k)){
+                                  putVoxelGrid(sculptor3d[k][i][j],palette);
+                                  s->putVoxel(i,j,k);
+                                 }
+                              }
+                          }
                       }
-                   }
-              }
+                  }
+              }else{ qDebug()<< "você está tentando desenhar fora do tamanho máximo de planos, tente mudar de plano ou aumentar a grade";}
          }
           if(method.compare("CutSphere",Qt::CaseInsensitive)==0){
-              for(int k=0;k<dimz;k++){
-                  for(int i=0;i<dimx;i++){
-                      for(int j=0;j<dimy;j++){
-                           if(gridLimit(xIndex+i,yIndex+j,zIndex+k)){
-                           cutVoxelGrid(sculptor3d[zIndex+k][xIndex+x][yIndex+y]);
-                           s->cutVoxel(xIndex+i,yIndex+j,zIndex+k);
-                           }
+              double aux;
+              for(int k=pIndex-r;k<=pIndex+r;k++){
+                  for(int i=lIndex-r;i<=lIndex+r;i++){
+                          for(int j=cIndex-r;j<=cIndex+r;j++){
+                              aux=(i-lIndex)*(i-lIndex) + (j-cIndex)*(j-cIndex) + (k-pIndex)*(k-pIndex);
+                              if(aux<(r*r)){
+                                  if(gridLimit(i,j,k)){
+                                  cutVoxelGrid(sculptor3d[k][i][j]);
+                                  s->cutVoxel(i,j,k);
+                                 }
+                              }
+                          }
                       }
-                   }
-              }
+                  }
          }
           if(method.compare("PutEllipsoid",Qt::CaseInsensitive)==0){
-              for(int k=0;k<dimz;k++){
-                  for(int i=0;i<dimx;i++){
-                      for(int j=0;j<dimy;j++){
-                           if(gridLimit(xIndex+i,yIndex+j,zIndex+k)){
-                           putVoxelGrid(sculptor3d[zIndex+k][xIndex+x][yIndex+y],palette);
-                           s->putVoxel(xIndex+i,yIndex+j,zIndex+k);
+              double aux,x,y,z;
+              for(int k=pIndex-rz;k<=pIndex+rz;k++){
+                  for(int i=lIndex-rx;i<=lIndex+rx;i++){
+                          for(int j=cIndex-ry;j<=cIndex+ry;j++){
+                              x =((double)(i-lIndex)*(double)(i-lIndex))/(rx*rx);
+                              y =((double)(j-cIndex)*(double)(j-cIndex))/(ry*ry);
+                              z =((double)(k-pIndex)*(double)(k-pIndex))/(rz*rz);
+                              aux=x+y+z;
+                                  if(aux<=1){
+                                      if(gridLimit(i,j,k)){
+                                      putVoxelGrid(sculptor3d[k][i][j],palette);
+                                      s->putVoxel(i,j,k);
+                                     }
+                                  }
                            }
-                      }
-                   }
-              }
-         }
-          if(method.compare("CutEllipsoid",Qt::CaseInsensitive)==0){
-              for(int k=0;k<dimz;k++){
-                  for(int i=0;i<dimx;i++){
-                      for(int j=0;j<dimy;j++){
-                           if(gridLimit(xIndex+i,yIndex+j,zIndex+k)){
-                           cutVoxelGrid(sculptor3d[zIndex+k][xIndex+x][yIndex+y]);
-                           s->cutVoxel(xIndex+i,yIndex+j,zIndex+k);
-                           }
-                      }
-                   }
-              }
-         }
-           //ifs...
-           sculptor2d = sculptor3d[zIndex];
-           repaint();
-           for(int i=0;i<x;i++){
-                   for(int j=0;j<y; j++){
-                       qDebug() << sculptor2d[i][j].isOn;
-                   }
+                    }
+                }
            }
+
+          if(method.compare("CutEllipsoid",Qt::CaseInsensitive)==0){
+              double aux,x,y,z;
+              for(int k=pIndex-rz;k<=pIndex+rz;k++){
+                  for(int i=lIndex-rx;i<=lIndex+rx;i++){
+                          for(int j=cIndex-ry;j<=cIndex+ry;j++){
+                              x =((double)(i-lIndex)*(double)(i-lIndex))/(rx*rx);
+                              y =((double)(j-cIndex)*(float)(j-cIndex))/(ry*ry);
+                              z =((double)(k-pIndex)*(float)(k-pIndex))/(rz*rz);
+                              aux=x+y+z;
+                                  if(aux<=1){
+                                      if(gridLimit(i,j,k)){
+                                      cutVoxelGrid(sculptor3d[k][i][j]);
+                                      s->cutVoxel(i,j,k);
+                                     }
+                                  }
+                           }
+                    }
+                }
+          }
+           sculptor2d = sculptor3d[pIndex];
+           repaint();
 
         }
     }
 
 }
 
-bool Plotter::gridLimit(int xc, int yc, int zc)
+bool Plotter::gridLimit(int l, int c, int p)
 {
-    if((xc<x)&&(yc<y)&&(zc<z)){
+    if((c<nc)&&(l<nl)&&(p<np)){
         return true;
     }
     return false;
@@ -231,35 +246,35 @@ void Plotter::cutVoxelGrid(Voxel &v)
 {
    v.isOn=false;
 }
-void Plotter::setX(int _x)
+void Plotter::setX(int _nc)
 {
-    x=_x;
+    nc=_nc;
 }
 
-void Plotter::setY(int _y)
+void Plotter::setY(int _nl)
 {
-    y=_y;
+    nl=_nl;
 }
 
-void Plotter::setZ(int _z)
+void Plotter::setZ(int _np)
 {
-    z=_z;
+    np=_np;
 }
 
 void Plotter::buildGrid()
 {
-    if(x!=0 && y!=0 && z!=0){
+    if(nc!=0 && nl!=0 && np!=0){
                Voxel voxel_zero;
                voxel_zero.r = voxel_zero.b = voxel_zero.g = 0;
                voxel_zero.a = 0.0f;
                voxel_zero.isOn = false;
 
                sculptor3d.clear();
-               for (int k=0;k<z;k++) {
+               for (int k=0;k<np;k++) {
                    vector<vector<Voxel>> aux1;
-                   for(int i=0;i<x; i++){
+                   for(int i=0;i<nl; i++){
                        vector<Voxel> aux2;
-                       for(int j=0;j<y; j++){
+                       for(int j=0;j<nc; j++){
                            aux2.push_back(voxel_zero);
                        }
                        aux1.push_back(aux2);
@@ -268,30 +283,30 @@ void Plotter::buildGrid()
                }
               sculptor2d=sculptor3d[0];
 
-               for(int i=0;i<x;i++){
-                       for(int j=0;j<y; j++){
+               for(int i=0;i<nl;i++){
+                       for(int j=0;j<nc; j++){
                            qDebug() << sculptor2d[i][j].isOn;
                        }
                }
 
-               emit changeSlidersx(0,x-1);
-               emit changeSlidersy(0,y-1);
-               emit changeSlidersz(0,z-1);
+               emit changeSlidersx(0,nc-1);
+               emit changeSlidersy(0,nl-1);
+               emit changeSlidersz(0,np-1);
 
-               if(x<y && x<z){
-                    emit changeSlidersR(0,x-1);
+               if(nc<nl && nc<nl){
+                    emit changeSlidersR(0,nc-1);
                }
-               if(y<x && y<z){
-                    emit changeSlidersR(0,y-1);
+               if(nl<nc && nl<np){
+                    emit changeSlidersR(0,nl-1);
                }
-               if(z<y && z<x){
-                    emit changeSlidersR(0,z-1);
+               if(np<nl && np<nc){
+                    emit changeSlidersR(0,np-1);
                }
 
-               emit changeSlidersPlanz(0,z);
+               emit changeSlidersPlanz(0,np);
 
                delete s;
-               s = new Sculptor(x,y,z);
+               s = new Sculptor(nl,nc,np);
     repaint();
     }
 }
@@ -367,9 +382,11 @@ void Plotter::saveProject()
 
 void Plotter::changeViewPlan(int current_plan)
 {
-    zIndex=current_plan;
-    sculptor2d=sculptor3d[zIndex];
+    if(nc!=0 && nl!=0 && np!=0){
+    pIndex=current_plan;
+    sculptor2d=sculptor3d[pIndex];
     repaint();
+    }
 }
 
 

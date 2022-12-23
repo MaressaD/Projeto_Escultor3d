@@ -122,20 +122,14 @@ compiler_rcc_clean:
 release/qrc_resources.cpp: resources.qrc \
 		C:/Qt/5.15.2/mingw81_64/bin/rcc.exe \
 		voxinhocut.png \
-		rubik\ (1).png \
 		ellipsoid.png \
-		sphere.png \
 		esferinha.png \
-		274399.png \
 		boxinho.png \
 		748035.png \
 		voxinho.png \
-		cube.png \
 		esferinhacut.png \
-		cube\ (1).png \
 		voxinhocorte.png \
-		ellipsoid\ (1).png \
-		rubik.png
+		ellipsoid\ (1).png
 	C:\Qt\5.15.2\mingw81_64\bin\rcc.exe -name resources resources.qrc -o release\qrc_resources.cpp
 
 compiler_moc_predefs_make_all: release/moc_predefs.h

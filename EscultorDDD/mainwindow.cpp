@@ -91,7 +91,7 @@ void MainWindow::on_buttonCSphere_clicked(bool checked)
 void MainWindow::on_buttonPEllipsoid_clicked(bool checked){
     QString name;
     if(ui->buttonPEllipsoid->isChecked()){
-        name = "PuEllipsoid";
+        name = "PutEllipsoid";
         getMethod(name);
         qDebug()<<name;
     }

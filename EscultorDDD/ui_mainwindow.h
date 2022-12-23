@@ -126,6 +126,9 @@ public:
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(586, 642);
         MainWindow->setMinimumSize(QSize(0, 0));
+        MainWindow->setFocusPolicy(Qt::NoFocus);
+        MainWindow->setAutoFillBackground(true);
+        MainWindow->setTabShape(QTabWidget::Rounded);
         actionSave = new QAction(MainWindow);
         actionSave->setObjectName(QString::fromUtf8("actionSave"));
         QIcon icon;
@@ -737,6 +740,9 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Painter3D", nullptr));
+#if QT_CONFIG(tooltip)
+        MainWindow->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
         actionSave->setText(QCoreApplication::translate("MainWindow", "Save OFF file", nullptr));
 #if QT_CONFIG(shortcut)
         actionSave->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+S", nullptr));
