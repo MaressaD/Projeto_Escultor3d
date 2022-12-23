@@ -6,6 +6,11 @@
   
   ![image](https://user-images.githubusercontent.com/50055001/209261441-ea96edd0-8b3f-4f46-b917-d13e312e0988.png)
   
-  
+
+Para iniciar uma escultura, primeiro selecione as dimensoes da grade usando os sliders x, y e z do lado direito e em seguida apertando o botão "BuildGrid"
+
+**Selecionando uma grade de 40x40x40:**
+![image](https://user-images.githubusercontent.com/50055001/209283277-10ea121d-a192-4e07-956f-aa78060839ae.png)
+
 Você pode escolher a cor utilizando os sliders da direita colocando os valores de 0 a 255: 
 Exemplo de seleção da cor`rgb(9, 105, 218)`
