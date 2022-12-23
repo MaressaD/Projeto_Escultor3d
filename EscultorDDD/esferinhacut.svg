@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 135.46666 135.46667"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="esferinhacut.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.104174"
+     inkscape:cx="153.05558"
+     inkscape:cy="222.79097"
+     inkscape:window-width="1366"
+     inkscape:window-height="715"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient2828"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#b6b6b6;stop-opacity:1;"
+         offset="0"
+         id="stop2826" />
+    </linearGradient>
+  </defs>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="fill:#b6b6b6;fill-opacity:0;stroke:#000000;stroke-width:1.73434;stroke-dasharray:none;stroke-opacity:1;image-rendering:auto"
+       id="path121"
+       cx="68.245377"
+       cy="69.370834"
+       rx="61.508907"
+       ry="63.225292"
+       inkscape:highlight-color="#8d7faa" />
+    <path
+       style="fill:#b6b6b6;fill-opacity:0;stroke:#000000;stroke-width:1.665;stroke-dasharray:none;stroke-opacity:1"
+       d="M 8.8659784,85.305089 C 70.927827,133.46892 128.43688,84.106985 128.43688,84.106985 l -0.23962,0.479242"
+       id="path6268" />
+    <path
+       style="fill:#b6b6b6;fill-opacity:0;stroke:#000000;stroke-width:1.665;stroke-dasharray:none;stroke-opacity:1"
+       d="M 65.416543,132.75006 C 50.320418,69.969345 64.218438,6.709389 64.218438,6.709389"
+       id="path6272" />
+  </g>
+</svg>

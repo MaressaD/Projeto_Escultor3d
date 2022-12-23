@@ -79,8 +79,8 @@ void Plotter::paintEvent(QPaintEvent *event)
         painter.setBrush(brush);
 
         if(nl!=0 && nc!=0 && np!=0){
-            for(i=1;i<nl;i++){
-                for(j=1;j<nc;j++){
+            for(i=0;i<nl;i++){
+                for(j=0;j<nc;j++){
                 int posicionL = i*dl;
                 int posicionC = j*dc;
                 if(sculptor2d[i][j].isOn==true){

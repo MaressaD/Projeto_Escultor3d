@@ -74,12 +74,12 @@ Sculptor::~Sculptor()
  * @param b intensidade da cor azul
  * @param a intensidade da transparência
  */
-void Sculptor::setColor(float r, float g, float b, float a)
+void Sculptor::setColor(float _r, float _g, float _b, float _a)
 {
-    this->r=r;
-    this->g=g;
-    this->b=b;
-    this->a=a;
+    r=(float)_r;
+    g=(float)_g;
+    b=(float)_b;
+    a=(float)_a;
 
 
 }
@@ -95,6 +95,7 @@ void Sculptor::putVoxel(int x, int y, int z)
     v[x][y][z].r=r;
     v[x][y][z].g=g;
     v[x][y][z].b=b;
+    v[x][y][z].a=a;
 
 }
 /**
@@ -313,13 +314,13 @@ void Sculptor::writeOFF(const char* filename)
            for(j=0;j<ny;j++){
                for(k=0;k<nz;k++){
                     if(v[i][j][k].isOn==true){
-                        fout<<"4 "<<0+8*contVertice<<" "<<3+8*contVertice<<" "<<2+8*contVertice<<" "<<1+8*contVertice<<" "<<v[i][j][k].r<<" "<<v[i][j][k].g<<" "<<v[i][j][k].b<<" "<<v[i][j][k].a<<std::endl; /*face1*/
+                        fout<<"4 "<<0+8*contVertice<<" "<<3+8*contVertice<<" "<<2+8*contVertice<<" "<<1+8*contVertice<<" "<<(float)v[i][j][k].r<<" "<<(float)v[i][j][k].g<<" "<<(float)v[i][j][k].b<<" "<<(float)v[i][j][k].a<<std::endl; /*face1*/
                        /* 4 corresponde ao numero de vertices na face, como todas as faces são quadradas esse valor sempre será o mesmo*/
-                        fout<<"4 "<<4+8*contVertice<<" "<<5+8*contVertice<<" "<<6+8*contVertice<<" "<<7+8*contVertice<<" "<<v[i][j][k].r<<" "<<v[i][j][k].g<<" "<<v[i][j][k].b<<" "<<v[i][j][k].a<<std::endl; /*face2*/
-                        fout<<"4 "<<0+8*contVertice<<" "<<1+8*contVertice<<" "<<5+8*contVertice<<" "<<4+8*contVertice<<" "<<v[i][j][k].r<<" "<<v[i][j][k].g<<" "<<v[i][j][k].b<<" "<<v[i][j][k].a<<std::endl;; /*face3*/
-                        fout<<"4 "<<0+8*contVertice<<" "<<4+8*contVertice<<" "<<7+8*contVertice<<" "<<3+8*contVertice<<" "<<v[i][j][k].r<<" "<<v[i][j][k].g<<" "<<v[i][j][k].b<<" "<<v[i][j][k].a<<std::endl; /*face4*/
-                        fout<<"4 "<<3+8*contVertice<<" "<<7+8*contVertice<<" "<<6+8*contVertice<<" "<<2+8*contVertice<<" "<<v[i][j][k].r<<" "<<v[i][j][k].g<<" "<<v[i][j][k].b<<" "<<v[i][j][k].a<<std::endl; /*face5*/
-                        fout<<"4 "<<1+8*contVertice<<" "<<2+8*contVertice<<" "<<6+8*contVertice<<" "<<5+8*contVertice<<" "<<v[i][j][k].r<<" "<<v[i][j][k].g<<" "<<v[i][j][k].b<<" "<<v[i][j][k].a<<std::endl; /*face6*/
+                        fout<<"4 "<<4+8*contVertice<<" "<<5+8*contVertice<<" "<<6+8*contVertice<<" "<<7+8*contVertice<<" "<<(float)v[i][j][k].r<<" "<<(float)v[i][j][k].g<<" "<<(float)v[i][j][k].b<<" "<<(float)v[i][j][k].a<<std::endl; /*face2*/
+                        fout<<"4 "<<0+8*contVertice<<" "<<1+8*contVertice<<" "<<5+8*contVertice<<" "<<4+8*contVertice<<" "<<(float)v[i][j][k].r<<" "<<(float)v[i][j][k].g<<" "<<(float)v[i][j][k].b<<" "<<(float)v[i][j][k].a<<std::endl;; /*face3*/
+                        fout<<"4 "<<0+8*contVertice<<" "<<4+8*contVertice<<" "<<7+8*contVertice<<" "<<3+8*contVertice<<" "<<(float)v[i][j][k].r<<" "<<(float)v[i][j][k].g<<" "<<(float)v[i][j][k].b<<" "<<(float)v[i][j][k].a<<std::endl; /*face4*/
+                        fout<<"4 "<<3+8*contVertice<<" "<<7+8*contVertice<<" "<<6+8*contVertice<<" "<<2+8*contVertice<<" "<<(float)v[i][j][k].r<<" "<<(float)v[i][j][k].g<<" "<<(float)v[i][j][k].b<<" "<<(float)v[i][j][k].a<<std::endl; /*face5*/
+                        fout<<"4 "<<1+8*contVertice<<" "<<2+8*contVertice<<" "<<6+8*contVertice<<" "<<5+8*contVertice<<" "<<(float)v[i][j][k].r<<" "<<(float)v[i][j][k].g<<" "<<(float)v[i][j][k].b<<" "<<(float)v[i][j][k].a<<std::endl; /*face6*/
                         contVertice++;
                     }
               }
