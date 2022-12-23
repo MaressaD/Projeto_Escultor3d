@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file alias="savinho">748035.png</file>
+        <file alias="elipsinha">ellipsoid (1).png</file>
+        <file>ellipsoid.png</file>
+        <file alias="voxinho">voxinho.png</file>
+        <file alias="voxinhocut">voxinhocut.png</file>
+        <file>boxinho.png</file>
+        <file>voxinhocorte.png</file>
+        <file>esferinha.png</file>
+        <file>esferinhacut.png</file>
+    </qresource>
+</RCC>

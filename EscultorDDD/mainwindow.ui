@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>607</width>
-    <height>625</height>
+    <width>586</width>
+    <height>642</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -20,790 +20,841 @@
    <string>Painter3D</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout_8">
-    <item row="0" column="0">
-     <layout class="QVBoxLayout" name="verticalLayout_8">
+   <layout class="QGridLayout" name="gridLayout_7">
+    <item row="0" column="0" colspan="3">
+     <layout class="QVBoxLayout" name="verticalLayout_4">
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_4">
+       <widget class="QLabel" name="label_6">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Select the method</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-         <widget class="QLabel" name="label_6">
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Select the method</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout">
+         <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout">
-            <item>
-             <widget class="QRadioButton" name="buttonPVoxel">
-              <property name="text">
-               <string>Add Voxel</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="buttonPBox">
-              <property name="text">
-               <string>Add Box</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="buttonPSphere">
-              <property name="text">
-               <string>Add Sphere</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="buttonPEllipsoid">
-              <property name="text">
-               <string>Add Ellipsoid</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
+           <widget class="QRadioButton" name="buttonPVoxel">
+            <property name="text">
+             <string>Add Voxel</string>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/icons/voxinho</normaloff>:/icons/voxinho</iconset>
+            </property>
+           </widget>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
-            <item>
-             <widget class="QRadioButton" name="buttonCVoxel">
-              <property name="text">
-               <string>Cut Voxel</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="buttonCBox">
-              <property name="autoFillBackground">
-               <bool>false</bool>
-              </property>
-              <property name="text">
-               <string>Cut Box</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="buttonCSphere">
-              <property name="text">
-               <string>Cut Sphere</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="buttonCEllipsoid">
-              <property name="text">
-               <string>Cut Ellipsoid</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
+           <widget class="QRadioButton" name="buttonPBox">
+            <property name="text">
+             <string>Add Box</string>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/icons/boxinho.png</normaloff>:/icons/boxinho.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="buttonPSphere">
+            <property name="text">
+             <string>Add Sphere</string>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/icons/esferinha.png</normaloff>:/icons/esferinha.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="buttonPEllipsoid">
+            <property name="text">
+             <string>Add Ellipsoid</string>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/icons/elipsinha</normaloff>:/icons/elipsinha</iconset>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QRadioButton" name="buttonCVoxel">
+            <property name="text">
+             <string>Cut Voxel</string>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/icons/voxinhocut</normaloff>:/icons/voxinhocut</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="buttonCBox">
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Cut Box</string>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/icons/voxinhocorte.png</normaloff>:/icons/voxinhocorte.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="buttonCSphere">
+            <property name="text">
+             <string>Cut Sphere</string>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/icons/esferinhacut.png</normaloff>:/icons/esferinhacut.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="buttonCEllipsoid">
+            <property name="text">
+             <string>Cut Ellipsoid</string>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/icons/ellipsoid.png</normaloff>:/icons/ellipsoid.png</iconset>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
        </layout>
       </item>
+     </layout>
+    </item>
+    <item row="1" column="0" rowspan="3">
+     <layout class="QVBoxLayout" name="verticalLayout_7">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_7">
-          <item>
-           <widget class="Plotter" name="widget" native="true">
-            <property name="minimumSize">
-             <size>
-              <width>350</width>
-              <height>350</height>
-             </size>
-            </property>
+       <widget class="Plotter" name="widget" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>350</width>
+          <height>350</height>
+         </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_6" rowminimumheight="0,0">
+        <item row="1" column="1">
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="2" column="1">
+           <widget class="QSlider" name="sliderZBox">
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
            </widget>
           </item>
-          <item>
-           <layout class="QGridLayout" name="gridLayout_6" rowminimumheight="0,0">
-            <item row="1" column="1">
-             <layout class="QGridLayout" name="gridLayout_2">
-              <item row="2" column="1">
-               <widget class="QSlider" name="sliderYbox">
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="maximum">
-                 <number>100</number>
-                </property>
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QLCDNumber" name="lcdNumber_13">
-                <property name="cursor">
-                 <cursorShape>ArrowCursor</cursorShape>
-                </property>
-                <property name="digitCount">
-                 <number>3</number>
-                </property>
-                <property name="segmentStyle">
-                 <enum>QLCDNumber::Flat</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="0">
-               <widget class="QLCDNumber" name="lcdNumber_11">
-                <property name="cursor">
-                 <cursorShape>ArrowCursor</cursorShape>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Sunken</enum>
-                </property>
-                <property name="lineWidth">
-                 <number>0</number>
-                </property>
-                <property name="midLineWidth">
-                 <number>1</number>
-                </property>
-                <property name="digitCount">
-                 <number>3</number>
-                </property>
-                <property name="segmentStyle">
-                 <enum>QLCDNumber::Flat</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="0">
-               <widget class="QLCDNumber" name="lcdNumber_12">
-                <property name="cursor">
-                 <cursorShape>ArrowCursor</cursorShape>
-                </property>
-                <property name="digitCount">
-                 <number>3</number>
-                </property>
-                <property name="segmentStyle">
-                 <enum>QLCDNumber::Flat</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QSlider" name="silderXBox">
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="maximum">
-                 <number>100</number>
-                </property>
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="1">
-               <widget class="QSlider" name="sliderYBox">
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="maximum">
-                 <number>100</number>
-                </property>
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="2">
-               <widget class="QLabel" name="label_12">
-                <property name="text">
-                 <string>Dimx</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="2">
-               <widget class="QLabel" name="label_16">
-                <property name="text">
-                 <string>Dimy</string>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="2">
-               <widget class="QLabel" name="label_15">
-                <property name="text">
-                 <string>Dimz</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="1" column="0">
-             <layout class="QGridLayout" name="gridLayout_3">
-              <item row="1" column="0">
-               <widget class="QLCDNumber" name="lcdNumber_10">
-                <property name="cursor">
-                 <cursorShape>ArrowCursor</cursorShape>
-                </property>
-                <property name="digitCount">
-                 <number>3</number>
-                </property>
-                <property name="segmentStyle">
-                 <enum>QLCDNumber::Flat</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="0">
-               <widget class="QLCDNumber" name="lcdNumber_9">
-                <property name="cursor">
-                 <cursorShape>ArrowCursor</cursorShape>
-                </property>
-                <property name="digitCount">
-                 <number>3</number>
-                </property>
-                <property name="segmentStyle">
-                 <enum>QLCDNumber::Flat</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QSlider" name="sliderRXellipsoid">
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="maximum">
-                 <number>100</number>
-                </property>
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="1">
-               <widget class="QSlider" name="sliderRZellipsoid">
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="maximum">
-                 <number>100</number>
-                </property>
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="0">
-               <widget class="QLCDNumber" name="lcdNumber_8">
-                <property name="cursor">
-                 <cursorShape>ArrowCursor</cursorShape>
-                </property>
-                <property name="digitCount">
-                 <number>3</number>
-                </property>
-                <property name="segmentStyle">
-                 <enum>QLCDNumber::Flat</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="1">
-               <widget class="QSlider" name="sliderRYellipsoid">
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="maximum">
-                 <number>100</number>
-                </property>
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="2">
-               <widget class="QLabel" name="label_7">
-                <property name="text">
-                 <string>Rx</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="2">
-               <widget class="QLabel" name="label_8">
-                <property name="text">
-                 <string>Ry</string>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="2">
-               <widget class="QLabel" name="label_11">
-                <property name="text">
-                 <string>Rz</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_3">
-              <property name="text">
-               <string>Select the dimensions of ellipsoid</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="label_4">
-              <property name="text">
-               <string>Select the dimension of box</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
+          <item row="1" column="0">
+           <widget class="QLCDNumber" name="lcdNumber_13">
+            <property name="cursor">
+             <cursorShape>ArrowCursor</cursorShape>
+            </property>
+            <property name="digitCount">
+             <number>3</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLCDNumber" name="lcdNumber_11">
+            <property name="cursor">
+             <cursorShape>ArrowCursor</cursorShape>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="midLineWidth">
+             <number>1</number>
+            </property>
+            <property name="digitCount">
+             <number>3</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLCDNumber" name="lcdNumber_12">
+            <property name="cursor">
+             <cursorShape>ArrowCursor</cursorShape>
+            </property>
+            <property name="digitCount">
+             <number>3</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSlider" name="sliderXBox">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSlider" name="sliderYBox">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label_12">
+            <property name="text">
+             <string>Dimx</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="label_16">
+            <property name="text">
+             <string>Dimy</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLabel" name="label_15">
+            <property name="text">
+             <string>Dimz</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="1" column="0">
+           <widget class="QLCDNumber" name="lcdNumber_10">
+            <property name="cursor">
+             <cursorShape>ArrowCursor</cursorShape>
+            </property>
+            <property name="digitCount">
+             <number>3</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLCDNumber" name="lcdNumber_9">
+            <property name="cursor">
+             <cursorShape>ArrowCursor</cursorShape>
+            </property>
+            <property name="digitCount">
+             <number>3</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSlider" name="sliderRXellipsoid">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSlider" name="sliderRZellipsoid">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLCDNumber" name="lcdNumber_8">
+            <property name="cursor">
+             <cursorShape>ArrowCursor</cursorShape>
+            </property>
+            <property name="digitCount">
+             <number>3</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSlider" name="sliderRYellipsoid">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Rx</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>Ry</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>Rz</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Select the dimensions of ellipsoid</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" alignment="Qt::AlignHCenter">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Select the dimension of box</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="1">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>2</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="2">
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Select dimensions (grid)</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="1">
+           <widget class="QSlider" name="horizontalSliderX">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="pageStep">
+             <number>10</number>
+            </property>
+            <property name="value">
+             <number>0</number>
+            </property>
+            <property name="sliderPosition">
+             <number>0</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLCDNumber" name="lcdNumber_2">
+            <property name="digitCount">
+             <number>3</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLCDNumber" name="lcdNumber_3">
+            <property name="digitCount">
+             <number>3</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSlider" name="horizontalSliderY">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="pageStep">
+             <number>10</number>
+            </property>
+            <property name="value">
+             <number>0</number>
+            </property>
+            <property name="sliderPosition">
+             <number>0</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLabel" name="label_24">
+            <property name="text">
+             <string>Z</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label_22">
+            <property name="text">
+             <string>X</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="label_23">
+            <property name="text">
+             <string>Y</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLCDNumber" name="lcdNumber">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="lineWidth">
+             <number>1</number>
+            </property>
+            <property name="digitCount">
+             <number>3</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+            <property name="value" stdset="0">
+             <double>0.000000000000000</double>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSlider" name="horizontalSlider_3">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="pageStep">
+             <number>10</number>
+            </property>
+            <property name="value">
+             <number>0</number>
+            </property>
+            <property name="sliderPosition">
+             <number>0</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
         <item>
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>BuildGrid</string>
           </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>20</height>
-           </size>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Select the color </string>
           </property>
-         </spacer>
+         </widget>
         </item>
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_6">
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_5">
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_3">
-              <item alignment="Qt::AlignHCenter">
-               <widget class="QLabel" name="label_5">
-                <property name="text">
-                 <string>Select dimensions (grid)</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <layout class="QGridLayout" name="gridLayout_4">
-                <item row="0" column="1">
-                 <widget class="QSlider" name="horizontalSliderX">
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="maximum">
-                   <number>100</number>
-                  </property>
-                  <property name="pageStep">
-                   <number>10</number>
-                  </property>
-                  <property name="value">
-                   <number>0</number>
-                  </property>
-                  <property name="sliderPosition">
-                   <number>0</number>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="0">
-                 <widget class="QLCDNumber" name="lcdNumber_2">
-                  <property name="digitCount">
-                   <number>3</number>
-                  </property>
-                  <property name="segmentStyle">
-                   <enum>QLCDNumber::Flat</enum>
-                  </property>
-                  <property name="intValue" stdset="0">
-                   <number>0</number>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="0">
-                 <widget class="QLCDNumber" name="lcdNumber_3">
-                  <property name="digitCount">
-                   <number>3</number>
-                  </property>
-                  <property name="segmentStyle">
-                   <enum>QLCDNumber::Flat</enum>
-                  </property>
-                  <property name="intValue" stdset="0">
-                   <number>0</number>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="1">
-                 <widget class="QSlider" name="horizontalSliderY">
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="maximum">
-                   <number>100</number>
-                  </property>
-                  <property name="pageStep">
-                   <number>10</number>
-                  </property>
-                  <property name="value">
-                   <number>0</number>
-                  </property>
-                  <property name="sliderPosition">
-                   <number>0</number>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="2">
-                 <widget class="QLabel" name="label_24">
-                  <property name="text">
-                   <string>Z</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="2">
-                 <widget class="QLabel" name="label_22">
-                  <property name="text">
-                   <string>X</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="2">
-                 <widget class="QLabel" name="label_23">
-                  <property name="text">
-                   <string>Y</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="0">
-                 <widget class="QLCDNumber" name="lcdNumber">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="toolTip">
-                   <string/>
-                  </property>
-                  <property name="lineWidth">
-                   <number>1</number>
-                  </property>
-                  <property name="digitCount">
-                   <number>3</number>
-                  </property>
-                  <property name="segmentStyle">
-                   <enum>QLCDNumber::Flat</enum>
-                  </property>
-                  <property name="value" stdset="0">
-                   <double>0.000000000000000</double>
-                  </property>
-                  <property name="intValue" stdset="0">
-                   <number>0</number>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="1">
-                 <widget class="QSlider" name="horizontalSlider_3">
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="maximum">
-                   <number>100</number>
-                  </property>
-                  <property name="pageStep">
-                   <number>10</number>
-                  </property>
-                  <property name="value">
-                   <number>0</number>
-                  </property>
-                  <property name="sliderPosition">
-                   <number>0</number>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton">
-                <property name="text">
-                 <string>BuildGrid</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_2">
-              <item alignment="Qt::AlignHCenter">
-               <widget class="QLabel" name="label">
-                <property name="text">
-                 <string>Select the color </string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <layout class="QGridLayout" name="gridLayout">
-                <item row="0" column="0">
-                 <widget class="QLCDNumber" name="lcdNumber_4">
-                  <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
-                  </property>
-                  <property name="layoutDirection">
-                   <enum>Qt::LeftToRight</enum>
-                  </property>
-                  <property name="autoFillBackground">
-                   <bool>true</bool>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Box</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <property name="lineWidth">
-                   <number>1</number>
-                  </property>
-                  <property name="midLineWidth">
-                   <number>0</number>
-                  </property>
-                  <property name="smallDecimalPoint">
-                   <bool>false</bool>
-                  </property>
-                  <property name="digitCount">
-                   <number>3</number>
-                  </property>
-                  <property name="segmentStyle">
-                   <enum>QLCDNumber::Flat</enum>
-                  </property>
-                  <property name="intValue" stdset="0">
-                   <number>255</number>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="1">
-                 <widget class="QSlider" name="sliderRed">
-                  <property name="enabled">
-                   <bool>true</bool>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="maximum">
-                   <number>255</number>
-                  </property>
-                  <property name="value">
-                   <number>255</number>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="2">
-                 <widget class="QLabel" name="label_18">
-                  <property name="text">
-                   <string>Red</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="0">
-                 <widget class="QLCDNumber" name="lcdNumber_6">
-                  <property name="cursor">
-                   <cursorShape>ArrowCursor</cursorShape>
-                  </property>
-                  <property name="digitCount">
-                   <number>3</number>
-                  </property>
-                  <property name="segmentStyle">
-                   <enum>QLCDNumber::Flat</enum>
-                  </property>
-                  <property name="intValue" stdset="0">
-                   <number>255</number>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="1">
-                 <widget class="QSlider" name="sliderGreen">
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="maximum">
-                   <number>255</number>
-                  </property>
-                  <property name="value">
-                   <number>255</number>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="2">
-                 <widget class="QLabel" name="label_19">
-                  <property name="text">
-                   <string>Green</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="0">
-                 <widget class="QLCDNumber" name="lcdNumber_5">
-                  <property name="cursor">
-                   <cursorShape>ArrowCursor</cursorShape>
-                  </property>
-                  <property name="smallDecimalPoint">
-                   <bool>false</bool>
-                  </property>
-                  <property name="digitCount">
-                   <number>3</number>
-                  </property>
-                  <property name="segmentStyle">
-                   <enum>QLCDNumber::Flat</enum>
-                  </property>
-                  <property name="intValue" stdset="0">
-                   <number>255</number>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="1">
-                 <widget class="QSlider" name="sliderBlue">
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="maximum">
-                   <number>255</number>
-                  </property>
-                  <property name="value">
-                   <number>255</number>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="2">
-                 <widget class="QLabel" name="label_20">
-                  <property name="text">
-                   <string>Blue</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="0">
-                 <widget class="QLCDNumber" name="lcdNumber_7">
-                  <property name="cursor">
-                   <cursorShape>ArrowCursor</cursorShape>
-                  </property>
-                  <property name="digitCount">
-                   <number>3</number>
-                  </property>
-                  <property name="segmentStyle">
-                   <enum>QLCDNumber::Flat</enum>
-                  </property>
-                  <property name="intValue" stdset="0">
-                   <number>255</number>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="1">
-                 <widget class="QSlider" name="sliderAlpha">
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="maximum">
-                   <number>255</number>
-                  </property>
-                  <property name="value">
-                   <number>255</number>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="2">
-                 <widget class="QLabel" name="label_21">
-                  <property name="text">
-                   <string>Transparency</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <widget class="color" name="widget_2" native="true">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>100</height>
-             </size>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QLCDNumber" name="lcdNumber_4">
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
             </property>
-            <property name="maximumSize">
-             <size>
-              <width>100</width>
-              <height>16777215</height>
-             </size>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
             </property>
             <property name="autoFillBackground">
              <bool>true</bool>
             </property>
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <property name="lineWidth">
+             <number>1</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>false</bool>
+            </property>
+            <property name="digitCount">
+             <number>3</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>255</number>
+            </property>
            </widget>
           </item>
-          <item>
-           <layout class="QGridLayout" name="gridLayout_7">
-            <item row="1" column="0">
-             <layout class="QGridLayout" name="gridLayout_5">
-              <item row="0" column="0">
-               <widget class="QLCDNumber" name="lcdNumber_14">
-                <property name="cursor">
-                 <cursorShape>ArrowCursor</cursorShape>
-                </property>
-                <property name="segmentStyle">
-                 <enum>QLCDNumber::Flat</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QSlider" name="sliderRsphere">
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="maximum">
-                 <number>100</number>
-                </property>
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="0" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="label_2">
-              <property name="autoFillBackground">
-               <bool>false</bool>
-              </property>
-              <property name="text">
-               <string>Select the dimension of Sphere</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
+          <item row="0" column="1">
+           <widget class="QSlider" name="sliderRed">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="maximum">
+             <number>255</number>
+            </property>
+            <property name="value">
+             <number>255</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label_18">
+            <property name="text">
+             <string>Red</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLCDNumber" name="lcdNumber_6">
+            <property name="cursor">
+             <cursorShape>ArrowCursor</cursorShape>
+            </property>
+            <property name="digitCount">
+             <number>3</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>255</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSlider" name="sliderGreen">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="maximum">
+             <number>255</number>
+            </property>
+            <property name="value">
+             <number>255</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="label_19">
+            <property name="text">
+             <string>Green</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLCDNumber" name="lcdNumber_5">
+            <property name="cursor">
+             <cursorShape>ArrowCursor</cursorShape>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>false</bool>
+            </property>
+            <property name="digitCount">
+             <number>3</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>255</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSlider" name="sliderBlue">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="maximum">
+             <number>255</number>
+            </property>
+            <property name="value">
+             <number>255</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLabel" name="label_20">
+            <property name="text">
+             <string>Blue</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLCDNumber" name="lcdNumber_7">
+            <property name="cursor">
+             <cursorShape>ArrowCursor</cursorShape>
+            </property>
+            <property name="digitCount">
+             <number>3</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Flat</enum>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>255</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QSlider" name="sliderAlpha">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="maximum">
+             <number>255</number>
+            </property>
+            <property name="value">
+             <number>255</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QLabel" name="label_21">
+            <property name="text">
+             <string>Transparency</string>
+            </property>
+           </widget>
           </item>
          </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="2">
+     <widget class="color" name="widget_2" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>100</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Select the dimension of Sphere</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="0" column="0">
+         <widget class="QLCDNumber" name="lcdNumber_14">
+          <property name="cursor">
+           <cursorShape>ArrowCursor</cursorShape>
+          </property>
+          <property name="segmentStyle">
+           <enum>QLCDNumber::Flat</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QSlider" name="sliderRsphere">
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string> Change the view plan</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLCDNumber" name="lcdNumber_15">
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <property name="segmentStyle">
+           <enum>QLCDNumber::Flat</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="sliderPlan">
+          <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -816,7 +867,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>607</width>
+     <width>586</width>
      <height>21</height>
     </rect>
    </property>
@@ -830,8 +881,15 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionSave">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/savinho</normaloff>:/icons/savinho</iconset>
+   </property>
    <property name="text">
     <string>Save OFF file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
    </property>
   </action>
  </widget>
@@ -861,6 +919,10 @@
     <slot>setBlueGrid(int)</slot>
     <slot>setAlphaGrid(int)</slot>
     <slot>slot1()</slot>
+    <slot>changeViewPlan(int)</slot>
+    <slot>slot3()</slot>
+    <slot>setZ(int)</slot>
+    <slot>saveProject()</slot>
    </slots>
   </customwidget>
   <customwidget>
@@ -879,7 +941,9 @@
    </slots>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>horizontalSliderX</sender>
@@ -888,12 +952,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>578</x>
-     <y>162</y>
+     <x>560</x>
+     <y>150</y>
     </hint>
     <hint type="destinationlabel">
-     <x>424</x>
-     <y>166</y>
+     <x>415</x>
+     <y>154</y>
     </hint>
    </hints>
   </connection>
@@ -904,12 +968,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>578</x>
-     <y>191</y>
+     <x>560</x>
+     <y>179</y>
     </hint>
     <hint type="destinationlabel">
-     <x>424</x>
-     <y>195</y>
+     <x>415</x>
+     <y>183</y>
     </hint>
    </hints>
   </connection>
@@ -920,12 +984,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>578</x>
-     <y>220</y>
+     <x>560</x>
+     <y>208</y>
     </hint>
     <hint type="destinationlabel">
-     <x>424</x>
-     <y>224</y>
+     <x>415</x>
+     <y>212</y>
     </hint>
    </hints>
   </connection>
@@ -936,12 +1000,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>516</x>
-     <y>305</y>
+     <x>498</x>
+     <y>293</y>
     </hint>
     <hint type="destinationlabel">
-     <x>424</x>
-     <y>309</y>
+     <x>415</x>
+     <y>297</y>
     </hint>
    </hints>
   </connection>
@@ -952,12 +1016,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>516</x>
-     <y>334</y>
+     <x>498</x>
+     <y>322</y>
     </hint>
     <hint type="destinationlabel">
-     <x>424</x>
-     <y>338</y>
+     <x>415</x>
+     <y>326</y>
     </hint>
    </hints>
   </connection>
@@ -968,12 +1032,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>516</x>
-     <y>363</y>
+     <x>498</x>
+     <y>351</y>
     </hint>
     <hint type="destinationlabel">
-     <x>424</x>
-     <y>367</y>
+     <x>415</x>
+     <y>355</y>
     </hint>
    </hints>
   </connection>
@@ -984,28 +1048,28 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>516</x>
-     <y>392</y>
+     <x>498</x>
+     <y>380</y>
     </hint>
     <hint type="destinationlabel">
-     <x>424</x>
-     <y>396</y>
+     <x>415</x>
+     <y>384</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>silderXBox</sender>
+   <sender>sliderXBox</sender>
    <signal>valueChanged(int)</signal>
    <receiver>lcdNumber_11</receiver>
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>325</x>
-     <y>517</y>
+     <x>323</x>
+     <y>536</y>
     </hint>
     <hint type="destinationlabel">
-     <x>236</x>
-     <y>532</y>
+     <x>239</x>
+     <y>549</y>
     </hint>
    </hints>
   </connection>
@@ -1016,28 +1080,28 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>325</x>
-     <y>546</y>
+     <x>323</x>
+     <y>565</y>
     </hint>
     <hint type="destinationlabel">
-     <x>236</x>
-     <y>561</y>
+     <x>239</x>
+     <y>578</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>sliderYbox</sender>
+   <sender>sliderZBox</sender>
    <signal>valueChanged(int)</signal>
    <receiver>lcdNumber_12</receiver>
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>325</x>
-     <y>575</y>
+     <x>323</x>
+     <y>594</y>
     </hint>
     <hint type="destinationlabel">
-     <x>236</x>
-     <y>590</y>
+     <x>239</x>
+     <y>607</y>
     </hint>
    </hints>
   </connection>
@@ -1048,12 +1112,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>163</x>
-     <y>531</y>
+     <x>166</x>
+     <y>545</y>
     </hint>
     <hint type="destinationlabel">
-     <x>59</x>
-     <y>521</y>
+     <x>57</x>
+     <y>540</y>
     </hint>
    </hints>
   </connection>
@@ -1064,12 +1128,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>163</x>
-     <y>560</y>
+     <x>166</x>
+     <y>574</y>
     </hint>
     <hint type="destinationlabel">
-     <x>59</x>
-     <y>550</y>
+     <x>57</x>
+     <y>569</y>
     </hint>
    </hints>
   </connection>
@@ -1080,12 +1144,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>163</x>
-     <y>589</y>
+     <x>166</x>
+     <y>603</y>
     </hint>
     <hint type="destinationlabel">
-     <x>59</x>
-     <y>579</y>
+     <x>57</x>
+     <y>598</y>
     </hint>
    </hints>
   </connection>
@@ -1096,12 +1160,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>592</x>
-     <y>572</y>
+     <x>574</x>
+     <y>542</y>
     </hint>
     <hint type="destinationlabel">
-     <x>441</x>
-     <y>576</y>
+     <x>432</x>
+     <y>546</y>
     </hint>
    </hints>
   </connection>
@@ -1112,8 +1176,8 @@
    <slot>setX(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>578</x>
-     <y>162</y>
+     <x>560</x>
+     <y>150</y>
     </hint>
     <hint type="destinationlabel">
      <x>309</x>
@@ -1128,8 +1192,8 @@
    <slot>setY(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>578</x>
-     <y>191</y>
+     <x>560</x>
+     <y>179</y>
     </hint>
     <hint type="destinationlabel">
      <x>301</x>
@@ -1144,8 +1208,8 @@
    <slot>buildGrid()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>592</x>
-     <y>255</y>
+     <x>574</x>
+     <y>243</y>
     </hint>
     <hint type="destinationlabel">
      <x>289</x>
@@ -1160,12 +1224,12 @@
    <slot>setRed(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>488</x>
-     <y>303</y>
+     <x>479</x>
+     <y>291</y>
     </hint>
     <hint type="destinationlabel">
-     <x>487</x>
-     <y>512</y>
+     <x>477</x>
+     <y>502</y>
     </hint>
    </hints>
   </connection>
@@ -1176,8 +1240,8 @@
    <slot>setGreen(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>491</x>
-     <y>328</y>
+     <x>498</x>
+     <y>331</y>
     </hint>
     <hint type="destinationlabel">
      <x>475</x>
@@ -1208,8 +1272,8 @@
    <slot>setAlpha(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>503</x>
-     <y>385</y>
+     <x>498</x>
+     <y>389</y>
     </hint>
     <hint type="destinationlabel">
      <x>475</x>
@@ -1224,8 +1288,8 @@
    <slot>setRx(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>141</x>
-     <y>531</y>
+     <x>166</x>
+     <y>545</y>
     </hint>
     <hint type="destinationlabel">
      <x>73</x>
@@ -1240,8 +1304,8 @@
    <slot>setRy(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>90</x>
-     <y>540</y>
+     <x>154</x>
+     <y>574</y>
     </hint>
     <hint type="destinationlabel">
      <x>92</x>
@@ -1256,8 +1320,8 @@
    <slot>setRz(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>134</x>
-     <y>568</y>
+     <x>166</x>
+     <y>603</y>
     </hint>
     <hint type="destinationlabel">
      <x>112</x>
@@ -1266,14 +1330,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>silderXBox</sender>
+   <sender>sliderXBox</sender>
    <signal>valueChanged(int)</signal>
    <receiver>widget</receiver>
    <slot>setDimx(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>258</x>
-     <y>510</y>
+     <x>323</x>
+     <y>545</y>
     </hint>
     <hint type="destinationlabel">
      <x>248</x>
@@ -1288,8 +1352,8 @@
    <slot>setDimy(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>330</x>
-     <y>560</y>
+     <x>323</x>
+     <y>574</y>
     </hint>
     <hint type="destinationlabel">
      <x>266</x>
@@ -1298,14 +1362,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>sliderYbox</sender>
+   <sender>sliderZBox</sender>
    <signal>valueChanged(int)</signal>
    <receiver>widget</receiver>
    <slot>setDimz(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>330</x>
-     <y>589</y>
+     <x>323</x>
+     <y>603</y>
     </hint>
     <hint type="destinationlabel">
      <x>290</x>
@@ -1320,8 +1384,8 @@
    <slot>setR(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>592</x>
-     <y>585</y>
+     <x>574</x>
+     <y>551</y>
     </hint>
     <hint type="destinationlabel">
      <x>348</x>
@@ -1336,8 +1400,8 @@
    <slot>setRedGrid(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>447</x>
-     <y>295</y>
+     <x>498</x>
+     <y>302</y>
     </hint>
     <hint type="destinationlabel">
      <x>348</x>
@@ -1352,8 +1416,8 @@
    <slot>setGreenGrid(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>460</x>
-     <y>327</y>
+     <x>498</x>
+     <y>331</y>
     </hint>
     <hint type="destinationlabel">
      <x>304</x>
@@ -1368,8 +1432,8 @@
    <slot>setBlueGrid(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>470</x>
-     <y>354</y>
+     <x>498</x>
+     <y>360</y>
     </hint>
     <hint type="destinationlabel">
      <x>345</x>
@@ -1384,8 +1448,8 @@
    <slot>setAlphaGrid(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>479</x>
-     <y>386</y>
+     <x>498</x>
+     <y>389</y>
     </hint>
     <hint type="destinationlabel">
      <x>359</x>
@@ -1393,8 +1457,73 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>sliderPlan</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber_15</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>496</x>
+     <y>599</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>603</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sliderPlan</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>widget</receiver>
+   <slot>changeViewPlan(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>472</x>
+     <y>590</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>448</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>widget</receiver>
+   <slot>setZ(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>550</x>
+     <y>215</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>343</x>
+     <y>220</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSave</sender>
+   <signal>triggered()</signal>
+   <receiver>widget</receiver>
+   <slot>saveProject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>184</x>
+     <y>291</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>buildGrid()</slot>
+  <slot>saveProject()</slot>
  </slots>
 </ui>

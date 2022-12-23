@@ -10,6 +10,7 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
@@ -36,8 +37,7 @@ class Ui_MainWindow
 public:
     QAction *actionSave;
     QWidget *centralwidget;
-    QGridLayout *gridLayout_8;
-    QVBoxLayout *verticalLayout_8;
+    QGridLayout *gridLayout_7;
     QVBoxLayout *verticalLayout_4;
     QLabel *label_6;
     QVBoxLayout *verticalLayout;
@@ -51,16 +51,15 @@ public:
     QRadioButton *buttonCBox;
     QRadioButton *buttonCSphere;
     QRadioButton *buttonCEllipsoid;
-    QHBoxLayout *horizontalLayout_3;
     QVBoxLayout *verticalLayout_7;
     Plotter *widget;
     QGridLayout *gridLayout_6;
     QGridLayout *gridLayout_2;
-    QSlider *sliderYbox;
+    QSlider *sliderZBox;
     QLCDNumber *lcdNumber_13;
     QLCDNumber *lcdNumber_11;
     QLCDNumber *lcdNumber_12;
-    QSlider *silderXBox;
+    QSlider *sliderXBox;
     QSlider *sliderYBox;
     QLabel *label_12;
     QLabel *label_16;
@@ -78,7 +77,6 @@ public:
     QLabel *label_3;
     QLabel *label_4;
     QSpacerItem *horizontalSpacer;
-    QVBoxLayout *verticalLayout_6;
     QVBoxLayout *verticalLayout_5;
     QVBoxLayout *verticalLayout_3;
     QLabel *label_5;
@@ -109,11 +107,15 @@ public:
     QSlider *sliderAlpha;
     QLabel *label_21;
     color *widget_2;
-    QGridLayout *gridLayout_7;
+    QVBoxLayout *verticalLayout_6;
+    QLabel *label_2;
     QGridLayout *gridLayout_5;
     QLCDNumber *lcdNumber_14;
     QSlider *sliderRsphere;
-    QLabel *label_2;
+    QLabel *label_9;
+    QHBoxLayout *horizontalLayout_3;
+    QLCDNumber *lcdNumber_15;
+    QSlider *sliderPlan;
     QMenuBar *menubar;
     QMenu *menuFile;
     QStatusBar *statusbar;
@@ -122,16 +124,17 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(607, 625);
+        MainWindow->resize(586, 642);
         MainWindow->setMinimumSize(QSize(0, 0));
         actionSave = new QAction(MainWindow);
         actionSave->setObjectName(QString::fromUtf8("actionSave"));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/icons/savinho"), QSize(), QIcon::Normal, QIcon::Off);
+        actionSave->setIcon(icon);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        gridLayout_8 = new QGridLayout(centralwidget);
-        gridLayout_8->setObjectName(QString::fromUtf8("gridLayout_8"));
-        verticalLayout_8 = new QVBoxLayout();
-        verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
+        gridLayout_7 = new QGridLayout(centralwidget);
+        gridLayout_7->setObjectName(QString::fromUtf8("gridLayout_7"));
         verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         label_6 = new QLabel(centralwidget);
@@ -146,21 +149,33 @@ public:
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         buttonPVoxel = new QRadioButton(centralwidget);
         buttonPVoxel->setObjectName(QString::fromUtf8("buttonPVoxel"));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/icons/voxinho"), QSize(), QIcon::Normal, QIcon::Off);
+        buttonPVoxel->setIcon(icon1);
 
         horizontalLayout->addWidget(buttonPVoxel);
 
         buttonPBox = new QRadioButton(centralwidget);
         buttonPBox->setObjectName(QString::fromUtf8("buttonPBox"));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/icons/boxinho.png"), QSize(), QIcon::Normal, QIcon::Off);
+        buttonPBox->setIcon(icon2);
 
         horizontalLayout->addWidget(buttonPBox);
 
         buttonPSphere = new QRadioButton(centralwidget);
         buttonPSphere->setObjectName(QString::fromUtf8("buttonPSphere"));
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/icons/esferinha.png"), QSize(), QIcon::Normal, QIcon::Off);
+        buttonPSphere->setIcon(icon3);
 
         horizontalLayout->addWidget(buttonPSphere);
 
         buttonPEllipsoid = new QRadioButton(centralwidget);
         buttonPEllipsoid->setObjectName(QString::fromUtf8("buttonPEllipsoid"));
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/icons/elipsinha"), QSize(), QIcon::Normal, QIcon::Off);
+        buttonPEllipsoid->setIcon(icon4);
 
         horizontalLayout->addWidget(buttonPEllipsoid);
 
@@ -171,22 +186,34 @@ public:
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         buttonCVoxel = new QRadioButton(centralwidget);
         buttonCVoxel->setObjectName(QString::fromUtf8("buttonCVoxel"));
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/icons/voxinhocut"), QSize(), QIcon::Normal, QIcon::Off);
+        buttonCVoxel->setIcon(icon5);
 
         horizontalLayout_2->addWidget(buttonCVoxel);
 
         buttonCBox = new QRadioButton(centralwidget);
         buttonCBox->setObjectName(QString::fromUtf8("buttonCBox"));
         buttonCBox->setAutoFillBackground(false);
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/icons/voxinhocorte.png"), QSize(), QIcon::Normal, QIcon::Off);
+        buttonCBox->setIcon(icon6);
 
         horizontalLayout_2->addWidget(buttonCBox);
 
         buttonCSphere = new QRadioButton(centralwidget);
         buttonCSphere->setObjectName(QString::fromUtf8("buttonCSphere"));
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8(":/icons/esferinhacut.png"), QSize(), QIcon::Normal, QIcon::Off);
+        buttonCSphere->setIcon(icon7);
 
         horizontalLayout_2->addWidget(buttonCSphere);
 
         buttonCEllipsoid = new QRadioButton(centralwidget);
         buttonCEllipsoid->setObjectName(QString::fromUtf8("buttonCEllipsoid"));
+        QIcon icon8;
+        icon8.addFile(QString::fromUtf8(":/icons/ellipsoid.png"), QSize(), QIcon::Normal, QIcon::Off);
+        buttonCEllipsoid->setIcon(icon8);
 
         horizontalLayout_2->addWidget(buttonCEllipsoid);
 
@@ -197,10 +224,8 @@ public:
         verticalLayout_4->addLayout(verticalLayout);
 
 
-        verticalLayout_8->addLayout(verticalLayout_4);
+        gridLayout_7->addLayout(verticalLayout_4, 0, 0, 1, 3);
 
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         verticalLayout_7 = new QVBoxLayout();
         verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
         widget = new Plotter(centralwidget);
@@ -214,13 +239,13 @@ public:
         gridLayout_6->setObjectName(QString::fromUtf8("gridLayout_6"));
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        sliderYbox = new QSlider(centralwidget);
-        sliderYbox->setObjectName(QString::fromUtf8("sliderYbox"));
-        sliderYbox->setCursor(QCursor(Qt::PointingHandCursor));
-        sliderYbox->setMaximum(100);
-        sliderYbox->setOrientation(Qt::Horizontal);
+        sliderZBox = new QSlider(centralwidget);
+        sliderZBox->setObjectName(QString::fromUtf8("sliderZBox"));
+        sliderZBox->setCursor(QCursor(Qt::PointingHandCursor));
+        sliderZBox->setMaximum(100);
+        sliderZBox->setOrientation(Qt::Horizontal);
 
-        gridLayout_2->addWidget(sliderYbox, 2, 1, 1, 1);
+        gridLayout_2->addWidget(sliderZBox, 2, 1, 1, 1);
 
         lcdNumber_13 = new QLCDNumber(centralwidget);
         lcdNumber_13->setObjectName(QString::fromUtf8("lcdNumber_13"));
@@ -249,13 +274,13 @@ public:
 
         gridLayout_2->addWidget(lcdNumber_12, 2, 0, 1, 1);
 
-        silderXBox = new QSlider(centralwidget);
-        silderXBox->setObjectName(QString::fromUtf8("silderXBox"));
-        silderXBox->setCursor(QCursor(Qt::PointingHandCursor));
-        silderXBox->setMaximum(100);
-        silderXBox->setOrientation(Qt::Horizontal);
+        sliderXBox = new QSlider(centralwidget);
+        sliderXBox->setObjectName(QString::fromUtf8("sliderXBox"));
+        sliderXBox->setCursor(QCursor(Qt::PointingHandCursor));
+        sliderXBox->setMaximum(100);
+        sliderXBox->setOrientation(Qt::Horizontal);
 
-        gridLayout_2->addWidget(silderXBox, 0, 1, 1, 1);
+        gridLayout_2->addWidget(sliderXBox, 0, 1, 1, 1);
 
         sliderYBox = new QSlider(centralwidget);
         sliderYBox->setObjectName(QString::fromUtf8("sliderYBox"));
@@ -365,14 +390,12 @@ public:
         verticalLayout_7->addLayout(gridLayout_6);
 
 
-        horizontalLayout_3->addLayout(verticalLayout_7);
+        gridLayout_7->addLayout(verticalLayout_7, 1, 0, 3, 1);
 
-        horizontalSpacer = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer = new QSpacerItem(2, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_3->addItem(horizontalSpacer);
+        gridLayout_7->addItem(horizontalSpacer, 1, 1, 1, 1);
 
-        verticalLayout_6 = new QVBoxLayout();
-        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
         verticalLayout_5 = new QVBoxLayout();
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
         verticalLayout_3 = new QVBoxLayout();
@@ -389,7 +412,8 @@ public:
         horizontalSliderX->setCursor(QCursor(Qt::PointingHandCursor));
         horizontalSliderX->setMaximum(100);
         horizontalSliderX->setPageStep(10);
-        horizontalSliderX->setSliderPosition(20);
+        horizontalSliderX->setValue(0);
+        horizontalSliderX->setSliderPosition(0);
         horizontalSliderX->setOrientation(Qt::Horizontal);
 
         gridLayout_4->addWidget(horizontalSliderX, 0, 1, 1, 1);
@@ -398,7 +422,7 @@ public:
         lcdNumber_2->setObjectName(QString::fromUtf8("lcdNumber_2"));
         lcdNumber_2->setDigitCount(3);
         lcdNumber_2->setSegmentStyle(QLCDNumber::Flat);
-        lcdNumber_2->setProperty("intValue", QVariant(20));
+        lcdNumber_2->setProperty("intValue", QVariant(0));
 
         gridLayout_4->addWidget(lcdNumber_2, 1, 0, 1, 1);
 
@@ -406,7 +430,7 @@ public:
         lcdNumber_3->setObjectName(QString::fromUtf8("lcdNumber_3"));
         lcdNumber_3->setDigitCount(3);
         lcdNumber_3->setSegmentStyle(QLCDNumber::Flat);
-        lcdNumber_3->setProperty("intValue", QVariant(20));
+        lcdNumber_3->setProperty("intValue", QVariant(0));
 
         gridLayout_4->addWidget(lcdNumber_3, 0, 0, 1, 1);
 
@@ -415,7 +439,8 @@ public:
         horizontalSliderY->setCursor(QCursor(Qt::PointingHandCursor));
         horizontalSliderY->setMaximum(100);
         horizontalSliderY->setPageStep(10);
-        horizontalSliderY->setSliderPosition(20);
+        horizontalSliderY->setValue(0);
+        horizontalSliderY->setSliderPosition(0);
         horizontalSliderY->setOrientation(Qt::Horizontal);
 
         gridLayout_4->addWidget(horizontalSliderY, 1, 1, 1, 1);
@@ -589,7 +614,7 @@ public:
         verticalLayout_5->addLayout(verticalLayout_2);
 
 
-        verticalLayout_6->addLayout(verticalLayout_5);
+        gridLayout_7->addLayout(verticalLayout_5, 1, 2, 1, 1);
 
         widget_2 = new color(centralwidget);
         widget_2->setObjectName(QString::fromUtf8("widget_2"));
@@ -597,10 +622,16 @@ public:
         widget_2->setMaximumSize(QSize(100, 16777215));
         widget_2->setAutoFillBackground(true);
 
-        verticalLayout_6->addWidget(widget_2);
+        gridLayout_7->addWidget(widget_2, 2, 2, 1, 1);
 
-        gridLayout_7 = new QGridLayout();
-        gridLayout_7->setObjectName(QString::fromUtf8("gridLayout_7"));
+        verticalLayout_6 = new QVBoxLayout();
+        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setAutoFillBackground(false);
+
+        verticalLayout_6->addWidget(label_2);
+
         gridLayout_5 = new QGridLayout();
         gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
         lcdNumber_14 = new QLCDNumber(centralwidget);
@@ -619,30 +650,39 @@ public:
         gridLayout_5->addWidget(sliderRsphere, 0, 1, 1, 1);
 
 
-        gridLayout_7->addLayout(gridLayout_5, 1, 0, 1, 1);
+        verticalLayout_6->addLayout(gridLayout_5);
 
-        label_2 = new QLabel(centralwidget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setAutoFillBackground(false);
+        label_9 = new QLabel(centralwidget);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
 
-        gridLayout_7->addWidget(label_2, 0, 0, 1, 1, Qt::AlignHCenter);
+        verticalLayout_6->addWidget(label_9);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        lcdNumber_15 = new QLCDNumber(centralwidget);
+        lcdNumber_15->setObjectName(QString::fromUtf8("lcdNumber_15"));
+        lcdNumber_15->setFrameShadow(QFrame::Raised);
+        lcdNumber_15->setSegmentStyle(QLCDNumber::Flat);
+
+        horizontalLayout_3->addWidget(lcdNumber_15);
+
+        sliderPlan = new QSlider(centralwidget);
+        sliderPlan->setObjectName(QString::fromUtf8("sliderPlan"));
+        sliderPlan->setMaximum(100);
+        sliderPlan->setOrientation(Qt::Horizontal);
+
+        horizontalLayout_3->addWidget(sliderPlan);
 
 
-        verticalLayout_6->addLayout(gridLayout_7);
+        verticalLayout_6->addLayout(horizontalLayout_3);
 
 
-        horizontalLayout_3->addLayout(verticalLayout_6);
-
-
-        verticalLayout_8->addLayout(horizontalLayout_3);
-
-
-        gridLayout_8->addLayout(verticalLayout_8, 0, 0, 1, 1);
+        gridLayout_7->addLayout(verticalLayout_6, 3, 2, 1, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 607, 21));
+        menubar->setGeometry(QRect(0, 0, 586, 21));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         MainWindow->setMenuBar(menubar);
@@ -661,9 +701,9 @@ public:
         QObject::connect(sliderGreen, SIGNAL(valueChanged(int)), lcdNumber_6, SLOT(display(int)));
         QObject::connect(sliderBlue, SIGNAL(valueChanged(int)), lcdNumber_5, SLOT(display(int)));
         QObject::connect(sliderAlpha, SIGNAL(valueChanged(int)), lcdNumber_7, SLOT(display(int)));
-        QObject::connect(silderXBox, SIGNAL(valueChanged(int)), lcdNumber_11, SLOT(display(int)));
+        QObject::connect(sliderXBox, SIGNAL(valueChanged(int)), lcdNumber_11, SLOT(display(int)));
         QObject::connect(sliderYBox, SIGNAL(valueChanged(int)), lcdNumber_13, SLOT(display(int)));
-        QObject::connect(sliderYbox, SIGNAL(valueChanged(int)), lcdNumber_12, SLOT(display(int)));
+        QObject::connect(sliderZBox, SIGNAL(valueChanged(int)), lcdNumber_12, SLOT(display(int)));
         QObject::connect(sliderRXellipsoid, SIGNAL(valueChanged(int)), lcdNumber_8, SLOT(display(int)));
         QObject::connect(sliderRYellipsoid, SIGNAL(valueChanged(int)), lcdNumber_10, SLOT(display(int)));
         QObject::connect(sliderRZellipsoid, SIGNAL(valueChanged(int)), lcdNumber_9, SLOT(display(int)));
@@ -678,14 +718,18 @@ public:
         QObject::connect(sliderRXellipsoid, SIGNAL(valueChanged(int)), widget, SLOT(setRx(int)));
         QObject::connect(sliderRYellipsoid, SIGNAL(valueChanged(int)), widget, SLOT(setRy(int)));
         QObject::connect(sliderRZellipsoid, SIGNAL(valueChanged(int)), widget, SLOT(setRz(int)));
-        QObject::connect(silderXBox, SIGNAL(valueChanged(int)), widget, SLOT(setDimx(int)));
+        QObject::connect(sliderXBox, SIGNAL(valueChanged(int)), widget, SLOT(setDimx(int)));
         QObject::connect(sliderYBox, SIGNAL(valueChanged(int)), widget, SLOT(setDimy(int)));
-        QObject::connect(sliderYbox, SIGNAL(valueChanged(int)), widget, SLOT(setDimz(int)));
+        QObject::connect(sliderZBox, SIGNAL(valueChanged(int)), widget, SLOT(setDimz(int)));
         QObject::connect(sliderRsphere, SIGNAL(valueChanged(int)), widget, SLOT(setR(int)));
         QObject::connect(sliderRed, SIGNAL(valueChanged(int)), widget, SLOT(setRedGrid(int)));
         QObject::connect(sliderGreen, SIGNAL(valueChanged(int)), widget, SLOT(setGreenGrid(int)));
         QObject::connect(sliderBlue, SIGNAL(valueChanged(int)), widget, SLOT(setBlueGrid(int)));
         QObject::connect(sliderAlpha, SIGNAL(valueChanged(int)), widget, SLOT(setAlphaGrid(int)));
+        QObject::connect(sliderPlan, SIGNAL(valueChanged(int)), lcdNumber_15, SLOT(display(int)));
+        QObject::connect(sliderPlan, SIGNAL(valueChanged(int)), widget, SLOT(changeViewPlan(int)));
+        QObject::connect(horizontalSlider_3, SIGNAL(valueChanged(int)), widget, SLOT(setZ(int)));
+        QObject::connect(actionSave, SIGNAL(triggered()), widget, SLOT(saveProject()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -694,6 +738,9 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Painter3D", nullptr));
         actionSave->setText(QCoreApplication::translate("MainWindow", "Save OFF file", nullptr));
+#if QT_CONFIG(shortcut)
+        actionSave->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+S", nullptr));
+#endif // QT_CONFIG(shortcut)
         label_6->setText(QCoreApplication::translate("MainWindow", "Select the method", nullptr));
         buttonPVoxel->setText(QCoreApplication::translate("MainWindow", "Add Voxel", nullptr));
         buttonPBox->setText(QCoreApplication::translate("MainWindow", "Add Box", nullptr));
@@ -725,6 +772,7 @@ public:
         label_20->setText(QCoreApplication::translate("MainWindow", "Blue", nullptr));
         label_21->setText(QCoreApplication::translate("MainWindow", "Transparency", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Select the dimension of Sphere", nullptr));
+        label_9->setText(QCoreApplication::translate("MainWindow", " Change the view plan", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
     } // retranslateUi
 

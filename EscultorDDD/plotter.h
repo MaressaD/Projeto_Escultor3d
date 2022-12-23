@@ -19,7 +19,7 @@ private:
     vector<vector<vector<Voxel>>> sculptor3d;
     vector<vector<Voxel>> sculptor2d;
 
-    int red,green,blue,alpha;
+   // int red,green,blue,alpha;
 
     //posição indexada do mouse no momento do click
     int xIndex,yIndex,zIndex;
@@ -38,17 +38,23 @@ private:
     int dimx,dimy,dimz;
 
     bool gridLimit(int xc,int yc,int zc);
-    void putVoxelGrid(Voxel &v);
+    void putVoxelGrid(Voxel &v,QColor color);
     void cutVoxelGrid(Voxel &v);
 public:
     explicit Plotter(QWidget *parent = nullptr);
     void paintEvent(QPaintEvent *event);
     void mousePressEvent(QMouseEvent *event);
 signals:
+    void changeSlidersx(int,int);
+    void changeSlidersy(int,int);
+    void changeSlidersz(int,int);;
+    void changeSlidersR(int,int);
+    void changeSlidersPlanz(int,int);
 
 public slots:
     void setX(int _x);
     void setY(int _y);
+    void setZ(int _z);
     void buildGrid();
     void setR(int _r);
     void setRx(int _rx);
@@ -57,12 +63,13 @@ public slots:
     void setDimx(int _dimx);
     void setDimy(int _dimy);
     void setDimz(int _dimz);
-   // void setColor(QColor coloring);
     void setRedGrid(int _r);
     void setGreenGrid(int _g);
     void setBlueGrid(int _b);
     void setAlphaGrid(int _a);
     void setMethod(QString m);
+    void saveProject();
+    void changeViewPlan(int current_plan);
 };
 
 #endif // PLOTTER_H
