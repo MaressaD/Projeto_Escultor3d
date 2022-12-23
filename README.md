@@ -17,7 +17,12 @@ Para desenhar, basta selecionar uma das ferramentas na parte superior, a cor do 
 
 Você pode escolher a cor utilizando os sliders da direita colocando os valores de 0 a 255 
 
-Exemplo de seleção da cor `rgb(255, 115, 7)` e desenho utilizando a ferramenta "PutVoxel"
+Exemplo de seleção da cor `rgb(158, 223, 47)` e desenho utilizando a ferramenta "PutVoxel"
 
-![image](https://user-images.githubusercontent.com/50055001/209283962-bc86a2b3-7c71-4919-8697-c507b711bae5.png)
+![image](https://user-images.githubusercontent.com/50055001/209284612-d181d05a-50b6-4028-829f-e5a1e2156aa7.png)
+
+Também é possível salvar o arquivo com o tipo .OFF e visualizar no MashLab:
+
+![image](https://user-images.githubusercontent.com/50055001/209284822-4c090953-bd4e-42be-80e5-c2037fbce8a0.png)
+
 
