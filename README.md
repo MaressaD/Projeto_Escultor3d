@@ -1,6 +1,6 @@
 # Projeto Escultor3d
-## Repositório da parte 3 do projeto da disciplina de Programação Avançada
-### Escultor 3D
+## Escultor 3D
+### Repositório do projeto finalizado de um escultor tridimensional 
 
   Nesta etapa de projeto foi trabalhado na construção de interface gráfica utilizando a classe criada na primeira etapa para criar uma ferramenta de desenho de esculturas. Com esta ferramententa é possível criar e salvar as esculturas em formato de arquivo .OFF para serem lidas pelos programas Geomview e MeshLab. 
   
