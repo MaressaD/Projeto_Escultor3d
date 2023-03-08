@@ -1,4 +1,4 @@
-# Projeto_Escultor3d_parte3
+# Projeto Escultor3d
 ## Repositório da parte 3 do projeto da disciplina de Programação Avançada
 ### Escultor 3D
 
