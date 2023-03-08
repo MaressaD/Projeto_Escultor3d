@@ -2,7 +2,7 @@
 ## Escultor 3D
 ### Repositório do projeto finalizado de um escultor tridimensional 
 
-  Nesta etapa de projeto foi trabalhado na construção de interface gráfica utilizando a classe criada na primeira etapa para criar uma ferramenta de desenho de esculturas. Com esta ferramententa é possível criar e salvar as esculturas em formato de arquivo .OFF para serem lidas pelos programas Geomview e MeshLab. 
+  Nesta etapa de projeto foi trabalhado na construção de interface gráfica utilizando a classe criada na primeira etapa para criar uma ferramenta de desenho de esculturas. Com esta ferramenta é possível criar e salvar as esculturas em formato de arquivo .OFF para serem lidas pelos programas Geomview e MeshLab. 
   
   ![image](https://user-images.githubusercontent.com/50055001/209261441-ea96edd0-8b3f-4f46-b917-d13e312e0988.png)
   
